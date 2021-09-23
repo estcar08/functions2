@@ -9,34 +9,63 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>Function Form</title>
         <style>
-            .center_div{
-                margin: 0 auto;
-                width:50% 
+            .back {
+                background: #e2e2e2;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+            }
+
+            .div-center {
+                width: 600px;
+                height: 400px;
+                background-color: #fff;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                max-width: 100%;
+                max-height: 100%;
+                overflow: auto;
+                padding: 1em 2em;
+                border-bottom: 2px solid #ccc;
+                display: table;
+            }
+
+            div.content {
+                display: table-cell;
+                vertical-align: middle;
             }
         </style>
     </head>
     <body>
-        <div class="container center_div">
-            <h1>JavaScript Functions</h1>
-            <form>
-                <div class="form-row">
-                    <div class="form-group col-md-12">
-                        <label for="InputText1">Number One</label>
-                        <input type="number" class="form-control" id="InputText1" name="InputText1" placeholder="Number One">
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label for="InputText2">Number Two</label>
-                        <input type="number" class="form-control" id="InputText2" name="InputText2" placeholder="Number Two">
-                    </div>
+        <div class="back">
+            <div class="div-center">
+                <div class="content">
+                    <h1 class="text-center">JavaScript Functions 2</h1>
+                    <hr>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="InputText1">Number One</label>
+                            <input type="number" class="form-control" id="InputText1" name="InputText1" placeholder="Number One">
+                        </div>
+                        <div class="form-group">
+                            <label for="InputText2">Number Two</label>
+                            <input type="number" class="form-control" id="InputText2" name="InputText2" placeholder="Number Two">
+                        </div>
+                        <button type="button" id="ActionButton1" class="btn btn-primary">Sum</button>
+                        <button type="button" id="ActionButton2" class="btn btn-primary">Subtraction</button>
+                        <button type="button" id="ActionButton3" class="btn btn-primary">Multiply</button>
+                        <button type="button" id="ActionButton4" class="btn btn-primary">Division</button>
+                        <button type="button" id="ActionButton5" class="btn btn-primary">Factorial </button>
+                    </form>
+        
                 </div>
-                <button type="button" id="ActionButton1" class="btn btn-primary">Sum</button>
-                <button type="button" id="ActionButton2" class="btn btn-primary">Subtraction</button>
-                <button type="button" id="ActionButton3" class="btn btn-primary">Multiply</button>
-                <button type="button" id="ActionButton4" class="btn btn-primary">Division</button>
-                <button type="button" id="ActionButton5" class="btn btn-primary">Factorial </button>
-            </form>
+            </div>
         </div>
-
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -131,7 +160,16 @@
                 function processFactorial(){
                     const a = Number(input.value);
                     if(emptyNumberValidation(input.value,0,true)){
-                        console.log(factorial(a));
+                        if(a  > 50){
+                            console.log('Detected a factorial of a very big number!');
+                        }else{
+                            const fact = factorial(a);
+                            if (!isFinite(fact)) {
+                                console.log('Detected a factorial of a very big number!');
+                            }else{
+                                console.log(fact);
+                            }
+                        }
                     }
                 }
 
