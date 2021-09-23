@@ -109,7 +109,7 @@
                     const b = Number(input2.value);
                     if(emptyNumberValidation(input.value,input2.value,false)){
                         const sum = a + b;
-                        console.log(sum);
+                        console.log(`${a} + ${b} = ${sum}`);
                         resetFields();
                     }
                 }
@@ -119,7 +119,7 @@
                     const b = Number(input2.value);
                     if(emptyNumberValidation(input.value,input2.value,false)){
                         const substr = a - b;
-                        console.log(substr);
+                        console.log(`${a} - ${b} = ${substr}`);
                         resetFields();
                     }
                 }
@@ -129,7 +129,7 @@
                     const b = Number(input2.value);
                     if(emptyNumberValidation(input.value,input2.value,false)){
                         const multi = a * b;
-                        console.log(multi);
+                        console.log(`${a} * ${b} = ${multi}`);
                         resetFields();
                     }
                 }
@@ -138,20 +138,11 @@
                     const a = Number(input.value);
                     const b = Number(input2.value);
                     if(emptyNumberValidation(input.value,input2.value,false)){
-                        const multi = a / b;
-                        console.log(multi);
-                        resetFields();
-                    }
-                }
-
-                function processDivision(){
-                    const a = Number(input.value);
-                    const b = Number(input2.value);
-                    if(emptyNumberValidation(input.value,input2.value,false)){
-                        if (!isFinite(a / b)) {
+                        const div = a / b;
+                        if (!isFinite(div)) {
                             console.log('You can’t divide /0');
                         }else{
-                            console.log(a / b);
+                            console.log(`${a} / ${b} = ${div}`);
                         }
                         resetFields();
                     }
@@ -167,7 +158,7 @@
                             if (!isFinite(fact)) {
                                 console.log('Detected a factorial of a very big number!');
                             }else{
-                                console.log(fact);
+                                console.log(`${a}! = ${fact}`);
                             }
                         }
                     }
